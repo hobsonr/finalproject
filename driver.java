@@ -8,9 +8,12 @@ public class driver
 {
    public static void main(String[] args) throws IOException
    {
+	  //loop to read all five text files
+	  for(int a = 1; a<6; a++){
       //create input stream and scanner
-      FileInputStream f = new FileInputStream("test1.txt");
+      FileInputStream f = new FileInputStream("test"+a+".txt");
       Scanner file = new Scanner(f);
+      
 
       //Create the Arraylists
       ArrayList<String> wordcount = new ArrayList<String>();
@@ -26,18 +29,21 @@ public class driver
           int index = wordcount.indexOf(nextWord);
           counter.set(index, counter.get(index)+1);
           }
+          
         //if a new word has been found, set the counter to 1
         else{
           wordcount.add(nextWord);
           counter.add(1);
           }
         }
+        
         f.close();
         file.close();
 
         //print the results
         for(int i = 0; i < wordcount.size(); i++){
-          System.out.println(wordcount.get(i)+" occured "+ counter.get(i) + " time(s)");
-          }
-}
-}
+          System.out.println(wordcount.get(i)+" counted "+ counter.get(i) + " time(s)");
+	  }
+     }
+    }
+  }
