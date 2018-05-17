@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.util.*; //for scanner and arraylist
 import java.io.IOException;
+import java.lang.Object;
 
 public class driver
 {
@@ -15,6 +16,7 @@ public class driver
         FileInputStream f = new FileInputStream("test"+a+".txt");
         Scanner file = new Scanner(f);
         
+        //print the heading of each file before printed results
         System.out.println("test"+a+".txt");
      
         //Create the Arraylists
@@ -25,6 +27,13 @@ public class driver
         while(file.hasNext()){
           //get next word
           String nextWord = file.next();
+          
+          //replace punctuation with blank space
+          nextWord = nextWord.replace(".","");
+          nextWord = nextWord.replace(",","");
+          nextWord = nextWord.replace("-","");
+          nextWord = nextWord.replace("'","");
+          nextWord = nextWord.replace("\"","");           
           
           //determine if the word is in the array list already
           if(wordcount.contains(nextWord)){
