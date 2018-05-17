@@ -1,7 +1,7 @@
 //driver class launches the main method
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.util.*; //for scanner and arraylist
+import java.util.*; //for scanner, arraylist and replace
 import java.io.IOException;
 import java.lang.Object;
 
@@ -17,6 +17,7 @@ public class driver
         Scanner file = new Scanner(f);
         
         //print the heading of each file before printed results
+        System.out.println("\n");
         System.out.println("test"+a+".txt");
      
         //Create the Arraylists
