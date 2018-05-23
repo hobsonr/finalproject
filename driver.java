@@ -16,33 +16,35 @@ public class driver
 {
    public static void main(String[] args) throws IOException
    {
-	  //loop to read all five text files
-	  for(int a = 1; a<6; a++){
-		  
-		  //create input stream and scanner
-		  FileInputStream f = new FileInputStream("test"+a+".txt");
-		  Scanner file = new Scanner(f);
+	   //loop to read all five text files
+	   for(int a = 1; a<6; a++){
+		   
+		   //create input stream and scanner
+		   FileInputStream f = new FileInputStream("test"+a+".txt");
+		   Scanner file = new Scanner(f);
         
-          //print the heading of each file before printed results
-          System.out.println("\n");
-          System.out.println("test"+a+".txt");
+           //print the heading of each file before printed results
+           System.out.println("\n");
+           System.out.println("test"+a+".txt");
      
-          //Create the Arraylists
-          ArrayList<String> wordcount = new ArrayList<String>();
-          ArrayList<Integer> counter = new ArrayList<Integer>();
+           //Create the Arraylists
+           ArrayList<String> wordcount = new ArrayList<String>();
+           ArrayList<Integer> counter = new ArrayList<Integer>();
 
-          //Read through file and find words
-          while(file.hasNext()){
-			  //get next word
-              String nextWord = file.next();
+           //Read through file and find words
+           while(file.hasNext()){
+			   //get next word
+			   String nextWord = file.next();
+               //System.out.println(next.toLowerCase());
           
-              //replace punctuation with blank space
+              //replace punctuation with blank space and sets all words to lowercase
               nextWord = nextWord.replace(".","");
               nextWord = nextWord.replace(",","");
               nextWord = nextWord.replace("-","");
               nextWord = nextWord.replace("'","");
-              nextWord = nextWord.replace("\"","");           
-          
+              nextWord = nextWord.replace("\"","");
+              nextWord = nextWord.toLowerCase();
+              
               //determine if the word is in the array list already
               if(wordcount.contains(nextWord)){
 				  //find the index the word is located at, goes to counter array list, increases counter by 1 each time the word is found
