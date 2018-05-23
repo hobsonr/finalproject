@@ -5,6 +5,13 @@ import java.util.*; //for scanner, arraylist and replace
 import java.io.IOException;
 import java.lang.Object;
 
+/**
+ * the driver class reads in all 5 files into two array lists
+ * each unique word is inputted into the wordcount arraylist 
+ * each occurance of a word is counted in the counter arraylist
+ * all punctuation is  replaced with a blank space so it will not be counted
+ * the results are then printed
+ **/
 public class driver
 {
    public static void main(String[] args) throws IOException
